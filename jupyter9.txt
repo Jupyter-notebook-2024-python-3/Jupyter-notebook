@@ -1,0 +1,13 @@
+9-import plotly.graph_objects as go
+import numpy as np
+# Create data for the 3D surface plot
+x = np.linspace(-5, 5, 100)
+y=np.linspace(-5,5,100) x, y = np.meshgrid(x, y)
+z = np.sin(np.sqrt(x**2 + y**2))
+# Create the 3D surface plot
+fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
+# Customize the layout
+fig.update_layout( scene=dict( xaxis_title='XAxis', yaxis_title='YAxis', zaxis_title='Z Axis',
+), title='3D Surface Plot Example', )
+# Show the plot
+fig.show()

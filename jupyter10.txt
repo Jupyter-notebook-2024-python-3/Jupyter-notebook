@@ -1,0 +1,20 @@
+10-import plotly.graph_objs as go
+import plotly.offline as pyo
+import pandas as pd
+data={'Date':pd.date_range(start='2023-01-01',periods=10,freq='D'), 'Value': [25, 30, 35, 40,
+45, 50, 55, 60, 65, 70]}
+df = pd.DataFrame(data)
+trace = go.Scatter(x=df['Date'], y=df['Value'], mode='lines', name='Time Series')
+layout=go.Layout(title='TimeSeriesPlot',xaxis=dict(title='Date'),yaxis=dict(title='Value'))
+fig = go.Figure(data=[trace], layout=layout)
+pyo.plot(fig, filename='time_series_plot.html')
+---
+10-import plotly.express as px
+import pandas as pd
+data = { "City": ["Bengaluru", "Mysuru", "Belagavi", "Kalburgi", "Davanagere", "New
+Delhi"], "Lat": [12.9716, 12.2958, 15.8497, 17.3291, 14.4644, 28.6139], "Lon": [77.5946,
+76.6394, 74.5048, 77.2471, 75.9224, 77.2090] }
+df = pd.DataFrame(data)
+fig = px.scatter_geo(df, lat="Lat", lon="Lon", text="City", title="Cities in India",
+projection="natural earth")
+fig.show()

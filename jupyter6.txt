@@ -1,0 +1,28 @@
+6-import matplotlib.pyplot as plt
+years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+revenue = [50000, 60000, 65000, 75000, 80000, 90000, 100000, 110000]
+plt.plot(years,revenue, marker='o', color='green', linestyle='-', label='Annual Revenue')
+ plt.xlabel('Year')
+plt.ylabel('Revenue ($)')
+plt.title('Company Annual Revenue Over the Years')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.show()
+---
+6-import matplotlib.pyplot as plt
+import numpy as np
+x=np.linspace(0,10,100)
+y1 = x
+y2 = x**2
+y3 = np.sin(x)
+plt.figure(figsize=(8, 6))
+plt.plot(x,y1, label='Linear', color='blue', linestyle='-', marker='o', markersize=4,
+linewidth=2)
+plt.plot(x,y2, label='Quadratic', color='red', linestyle='--', linewidth=2)
+plt.plot(x,y3, label='Sine', color='green', linestyle=':', marker='^', markersize=4, linewidth=2)
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('LinearPlotwithLineFormatting')
+plt.legend()
+plt.grid(True)
+plt.show()

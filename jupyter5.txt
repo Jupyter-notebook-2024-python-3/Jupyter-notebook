@@ -1,0 +1,18 @@
+5-import matplotlib.pyplot as plt
+import numpy as np
+data=np.random.randn(1000)
+plt.hist(data,bins=22,color='orange',edgecolor='purple')
+plt.xlabel("values")
+plt.ylabel("Frequency")
+plt.title("Histogram plot example")
+plt.show()
+---
+5-import matplotlib.pyplot as plt
+import numpy as np
+countries=['Brazil','Germany','Italy','Argentina','France','Uruguay','England','Spain']
+wins=[5,4,4,3,2,2,1,1]
+colors=['yellow','magenta','green','blue','orange','teal','brown','red']
+plt.pie(wins,labels=countries,autopct='%1.1f%%',colors=colors,startangle=90,explode=[0.2,0
+,0,0,0,0,0,0],shadow=True)
+plt.title("fifa World Cup win by Countries")
+plt.show()

@@ -1,0 +1,49 @@
+7-import seaborn as sns
+import matplotlib.pyplot as plt
+iris = sns.load_dataset("iris")
+sns.distplot(iris["sepal_length"],bins=10,kde=True)
+plt.title("Distribution Plot of Sepal Length")
+plt.xlabel("SepalLength(cm)")
+plt.ylabel("Density")
+plt.show()
+---
+7-import seaborn as sns
+import matplotlib.pyplot as plt
+iris = sns.load_dataset("iris")
+sns.jointplot(x="sepal_length",y="sepal_width",data=iris,kind="reg")
+plt.show()
+---
+7-import seaborn as sns
+import matplotlib.pyplot as plt
+tips = sns.load_dataset("tips")
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.title("BoxPlot:DistributionofTotalBillAmountbyDay")
+plt.xlabel("Day of the Week")
+plt.ylabel("TotalBillAmount($)")
+plt.show()
+---
+7-import seaborn as sns
+import matplotlib.pyplot as plt
+iris = sns.load_dataset("iris")
+correlation_matrix = iris.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm")
+plt.title("HeatmapofFeatureCorrelationsintheIrisDataset")
+plt.show()
+---
+7-import seaborn as sns
+import matplotlib.pyplot as plt
+sns.lmplot(x="total_bill", y="tip", data=tips)
+plt.title("LinearRegressionPlot:TotalBillvs.Tip")
+plt.xlabel("Total Bill Amount ($)")
+plt.ylabel("TipAmount($)")
+plt.show()
+---
+7-import seaborn as sns
+import matplotlib.pyplot as plt
+tips = sns.load_dataset("tips")
+g = sns.FacetGrid(tips, col="day", height=4)
+g.map(sns.scatterplot, "total_bill", "tip")
+g.set_axis_labels("TotalBillAmount($)","TipAmount($)")
+g.set_titles("Day: {col_name}")
+plt.suptitle("FacetGrid:ScatterPlotsofTotalBillvs.TipbyDay")
+plt.show()
